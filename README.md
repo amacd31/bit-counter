@@ -9,8 +9,11 @@ Implemented as a Python module using Rust, providing high performance counting.
 To build this package an installation of Rust and Python with the [maturin](https://maturin.rs/)
 package is required. The Maturin documentation on [maturin local development](https://maturin.rs/develop.html) is a useful reference for more details.
 
-When building it is best to set the RUSTFLAGS environment variable to specify
-targeting CPUs with the [POPCNT](https://en.wikipedia.org/wiki/SSE4#POPCNT_and_LZCNT) instruction. i.e. `RUSTFLAGS='-C target-feature=+popcnt' maturin build -r`.
+This project is configured by default to target CPUs with the [POPCNT](https://en.wikipedia.org/wiki/SSE4#POPCNT_and_LZCNT) instruction.
+The builds available on PyPI have been built with this configuration.
+If you require a version for an older CPU without `popcnt` support, build with
+the RUSTFLAGS environment variable to exclude the `popcnt` target-feature.
+i.e. `RUSTFLAGS='-C target-feature=-popcnt' maturin build -r`.
 
 
 ## Example usage
