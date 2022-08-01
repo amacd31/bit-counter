@@ -1,6 +1,7 @@
 use numpy::PyReadonlyArrayDyn;
 use pyo3::exceptions::PyTypeError;
 use pyo3::prelude::*;
+use rayon::prelude::*;
 
 /// count_ones(arr)
 /// --
@@ -21,7 +22,7 @@ fn count_ones(arr: PyReadonlyArrayDyn<u8>) -> PyResult<usize> {
     };
 
     let bit_count = arr
-        .iter()
+        .into_par_iter()
         .map(|elem| elem.count_ones() as usize)
         .sum::<usize>();
 
