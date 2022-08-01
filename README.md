@@ -43,16 +43,16 @@ from bit_counter import count_ones
 arr = np.packbits(np.random.choice([True, False], 100000000))
 ```
 
-Using this package on a mid-2013 MacBook Air (1.7 GHz Intel Core i7) yields:
+Using this package on an AMD Ryzen 9 3900X 12-Core Processor yields:
 ```
 %timeit count_ones(arr)
 
-45.3 ms ± 2.08 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+905 µs ± 4.64 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 ```
 
 Compared to the simple unpack and sum case:
 ```
 %timeit np.unpackbits(arr).sum()
 
-108 ms ± 6.89 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+60.4 ms ± 421 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 ```
