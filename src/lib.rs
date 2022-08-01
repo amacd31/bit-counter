@@ -1,4 +1,3 @@
-use bitvec::prelude::*;
 use numpy::PyReadonlyArrayDyn;
 use pyo3::exceptions::PyTypeError;
 use pyo3::prelude::*;
@@ -21,8 +20,12 @@ fn count_ones(arr: PyReadonlyArrayDyn<u8>) -> PyResult<usize> {
         Err(error) => return Err(PyTypeError::new_err(error)),
     };
 
-    let bits = BitSlice::<_, Lsb0>::from_slice(&arr);
-    Ok(bits.count_ones())
+    let bit_count = arr
+        .iter()
+        .map(|elem| elem.count_ones() as usize)
+        .sum::<usize>();
+
+    Ok(bit_count)
 }
 
 #[pymodule]
