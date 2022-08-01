@@ -15,6 +15,10 @@ If you require a version for an older CPU without `popcnt` support, build with
 the RUSTFLAGS environment variable to exclude the `popcnt` target-feature.
 i.e. `RUSTFLAGS='-C target-feature=-popcnt' maturin build -r`.
 
+By default the bit counting is done with a parallel map across all available
+CPUs through the use of [rayon](https://docs.rs/rayon/latest/rayon/). Number of threads
+can be configured with the environment variable `RAYON_NUM_THREADS`.
+
 
 ## Example usage
 
