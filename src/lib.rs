@@ -30,7 +30,7 @@ fn count_ones(arr: PyReadonlyArrayDyn<u8>) -> PyResult<usize> {
 }
 
 #[pymodule]
-fn bit_counter(_py: Python, m: &PyModule) -> PyResult<()> {
+fn bit_counter(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(count_ones, m)?)?;
     m.add("__version__", env!("CARGO_PKG_VERSION"))?;
     Ok(())
