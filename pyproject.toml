@@ -4,6 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "bit-counter"
+dynamic = ["version", "description", "description_content_type"]
 requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Rust",
