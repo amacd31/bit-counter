@@ -1,6 +1,6 @@
 # bit-counter
 
-Package for counting the number of one bits in a numpy array of uint8 values.
+Package for efficiently counting the number of one bits in a numpy array.
 Implemented as a Python module using Rust, providing high performance counting.
 
 ## Building
