@@ -40,6 +40,15 @@ macro_rules! try_extract_and_count {
 /// Used for counting up the number of one values in integer numpy arrays.
 /// Supports uint8, uint16, uint32, uint64, int8, int16, int32, and int64 dtypes.
 ///
+/// Example usage:
+///
+///     import numpy as np
+///     from bit_counter import count_ones
+///     
+///     np.random.seed(42)
+///     arr = np.packbits(np.random.choice([True, False], 100000000))
+///     popcount = count_ones(arr.view(np.uint64)) # View as uint64 for better performance
+///
 /// :param arr: Numpy integer array to count the number of one bits in.
 /// :returns: Integer of the number of bits that were one in the array.
 #[pyfunction]
