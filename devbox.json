@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.3/.schema/devbox.schema.json",
+  "packages": [
+    "python@latest",
+    "uv@latest",
+    "rustup@latest",
+    "libiconv@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "rustup default stable"
+    ],
+    "scripts": {
+      "test": [
+        "pytest tests/"
+      ]
+    }
+  }
+}
