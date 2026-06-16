@@ -6,7 +6,7 @@ build-backend = "maturin"
 name = "bit-counter"
 readme = "README.md"
 dynamic = ["version", "summary", "description", "description_content_type"]
-requires-python = ">=3.7"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
