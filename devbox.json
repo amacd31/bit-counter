@@ -6,6 +6,10 @@
     "rustup@latest",
     "libiconv@latest"
   ],
+  "env": {
+    "VENV_DIR": "$PWD/.venv",
+    "PATH": "$VENV_DIR/bin:$PATH"
+  },
   "shell": {
     "init_hook": [
       "rustup default stable"
