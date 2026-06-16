@@ -1,5 +1,5 @@
 [build-system]
-requires = ["maturin>=1.8"]
+requires = ["maturin>=1.14"]
 build-backend = "maturin"
 
 [project]
@@ -11,5 +11,12 @@ classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+[dependency-groups]
+dev = [
+    "maturin>=1.14.0",
+    "numpy>=1.21.6",
+    "pytest>=7.4.4",
 ]
 
