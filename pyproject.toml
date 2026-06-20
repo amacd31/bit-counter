@@ -20,3 +20,6 @@ dev = [
     "pytest>=7.4.4",
 ]
 
+[tool.maturin.generate-ci.github]
+trusted-publishing = true
+publishing-environment = "release"
